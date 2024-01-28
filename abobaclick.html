@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aboba Clicker</title>
+  <style>.aabb {
+    font-family: 'Combo-Capital', sans-serif;
+    font-size: 65px;
+                                                
+}
+.click-counter {
+  text-align: center;
+}
+body {
+  background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20211028/pngtree-game-abstract-purple-geometric-pattern-background-image_912963.png);
+}</style>
+  <link rel="shortcut icon" href="https://amonguspro.ru/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <link href="https://fonts.cdnfonts.com/css/combo-capital" rel="stylesheet">
+  <title>Aboba Clicker</title>      
+</head>
+<body>
+  <div class="click-counter">
+  <button id="aboba" class="aabb" style="background-color: violet">+1 aboba</button>
+  <h1 id="aabb" class="aabb" style="color: violet">abobas: 0</h1>
+  <button id="tomakenull" class="aabb" hidden="true" style="background-color: violet">= 0</button>
+  </div>
+</body>
+</html>
+<!-- partial -->
+  <script>let aboba = 0
+let clickPlus = 1;
+document.getElementById('aboba').onclick = function() {
+  aboba += clickPlus;
+  document.getElementById('aabb').textContent = "abobas: " + aboba;
+ document.getElementById('tomakenull').hidden = false;
+  
+};
+document.getElementById('tomakenull').onclick = function() {
+  aboba = 0;
+  document.getElementById('aabb').textContent = "abobas: 0";
+  document.getElementById('tomakenull').hidden = true;
+};</script>
+
+</body>
+</html>
