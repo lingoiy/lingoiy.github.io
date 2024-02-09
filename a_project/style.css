@@ -1,0 +1,12 @@
+#a {
+ text-align: center;
+}
+.c {
+  width: 164px;
+  height: 82px;
+  border-radius: 60px;
+  color: rgba(245, 245, 245, 1);
+  font-weight: 1000;
+  font-size: 60px;
+  background: linear-gradient(27deg, rgba(255, 0, 0, 1), rgba(0, 0, 255, 1))
+}
