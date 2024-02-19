@@ -1,0 +1,15 @@
+.stat {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  font-family: "Montserrat";
+  color: white;
+  font-weight: 600;
+  font-size: 45px;
+}
+#myVideo {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
