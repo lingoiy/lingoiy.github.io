@@ -1,0 +1,11 @@
+* {
+  font-family: "Comic Sans MS", cursive;
+  font-size: 60px;
+  text-align: center;
+  bottom: 50%;
+}
+body {
+  background-image: url(https://inter.ru/wp-content/uploads/2019/05/%D1%84%D0%BE%D0%BD-11.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
