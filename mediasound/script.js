@@ -19,7 +19,7 @@ function uploadAudio() {
 // Остальной код остается без изменений
 function uploadFile(formData) {
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'your_php_script.php', true); // Замените на путь к вашему PHP-скрипту
+    xhr.open('POST', 'publicate.php', true); // Замените на путь к вашему PHP-скрипту
 
     xhr.onload = function() {
         if (xhr.status === 200) {
