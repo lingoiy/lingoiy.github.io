@@ -18,10 +18,28 @@ function uploadAudio() {
 
 // Остальной код остается без изменений
 function uploadFile(formData) {
-    // ... (остальной код функции uploadFile)
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'your_php_script.php', true); // Замените на путь к вашему PHP-скрипту
+
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            const response = JSON.parse(xhr.responseText);
+            displayFiles(response.files); // Обрабатываем ответ от сервера
+        } else {
+            alert('Ошибка при загрузке файла');
+        }
+    };
+
+    xhr.send(formData);
 }
 
-// Остальной код остается без изменений
 function displayFiles(files) {
-    // ... (остальной код функции displayFiles)
+    const list = document.getElementById('fileList');
+    list.innerHTML = '';
+
+    files.forEach(file => {
+        const li = document.createElement('li');
+        li.textContent = file.name;
+        list.appendChild(li);
+    });
 }
