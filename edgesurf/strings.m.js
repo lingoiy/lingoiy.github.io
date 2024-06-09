@@ -1,4 +1,4 @@
-import {loadTimeData} from '//resources/js/load_time_data.js';
+import {loadTimeData} from './js/load_time_data.js';
 loadTimeData.data = {
     "bestScore": "Лучшее достижение: $1$2$3",
     "bestScoreFlyout": "Лучший результат: $1",
