@@ -1,1 +1,85 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>402 - Страница недоступна</title>
+</head>
+<body>
+  <img src="https://i.ibb.co/qDwBfqG/image.png" alt="" onclick="updateContent()">
+<div id="overlay" onclick="clickOnOverlay()"><div class="inner-overlay" onclick="clickOnOverlayInner()" scrolling="yes"><p style="color: black;">Для повторного подключения прошу вас отправить 100 рублей с комментарием</p><div id="comment" style="color: #448ecf" onclick="prompt('Полный шифр', fullTxt);"></div><div text-size="20px" class="btn btn-copy" onclick="navigator.clipboard.writeText(fullTxt);">Копировать</div><a href="//donationalerts.com/r/phyfstre" target="_blank">(DonationAlerts)</a></div></div>
+<style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  body {
+display: grid;
+  place-items: center;
+}
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+#overlay .inner-overlay {
+  user-select: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 30px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -webkit-box-shadow:0px 0px 93px 57px rgba(163,6,6,0.9);
+-moz-box-shadow: 0px 0px 93px 57px rgba(163,6,6,0.9);
+box-shadow: 0px 0px 93px 57px rgba(163,6,6,0.9);
+  background-color: white;
+  width: 500px;
+  height: 600px;
+}
+img {
+  height: 100%;
+  width: 100%;
+}
+.btn {
+  cursor: pointer;
+  font-size: attr(text-size) !important;
+  color: white;
+  font-weight: 800;
+  width: 200px;
+  height: 100px;
+  border-radius: 50px;
+  background: radial-gradient(circle, rgba(20,20,177,1) 0%, rgba(20,201,253,1) 57%, rgba(175,20,251,1) 69%, rgba(241,20,28,1) 83%);
+  display: grid;
+  place-items: center;
+}</style><script>const fullTxt = btoa(location.href.replace('https://' + location.hostname, ""))
+var oioioi = false; // urenimanakonki
+function updateContent() {
+  overlay.style.display = "block";
+  comment.innerText = fullTxt.slice(0, 7) + '...'
+}
+function clickOnOverlayInner() {
+  oioioi = true; // dukemakflea
+  setTimeout(function() {
+    oioioi = false;
+  }, 10)
+}
+function clickOnOverlay() {
+  setTimeout(function() {
+    if (oioioi == true) {
+      
+    } else {
+      overlay.style.display = 'none';
+    }
+  }, 2);
+}</script>
+</body>
+</html>
