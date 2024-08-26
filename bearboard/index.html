@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #carousel {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+    }
+
+    #carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    #carousel img.active {
+      opacity: 1;
+    }
+
+    #carousel button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-size: 2em;
+      color: white;
+      cursor: pointer;
+    }
+
+    #carousel button.prev {
+      left: 1em;
+    }
+
+    #carousel button.next {
+      right: 1em;
+    }
+  </style>
+</head>
+<body>
+
+<div id="carousel">
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+  <!-- Изображения будут добавлены здесь динамически -->
+</div>
+
+<script>
+  const carousel = document.getElementById('carousel');
+  const urlParams = new URLSearchParams(window.location.search);
+  const images = urlParams.getAll('img'); // Получаем массив URL изображений из URLSearchParams
+
+  function createImageElement(src) {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = '';
+    return img;
+  }
+
+  function showImage() {
+    console.log(`Showing image ${currentImage + 1} of ${images.length}`);
+    for (let i = 0; i < carousel.children.length; i++) {
+      if (carousel.children[i].tagName === 'IMG') {
+        carousel.children[i].classList.remove('active');
+      }
+    }
+    document.querySelector(`[src="${images[currentImage]}"`).classList.add('active');
+  }
+
+  function nextImage() {
+    currentImage = (currentImage + 1) % images.length;
+    showImage();
+  }
+
+  function prevImage() {
+    currentImage = (currentImage - 1 + images.length) % images.length;
+    showImage();
+  }
+
+  let currentImage = 0;
+
+  images.forEach((src) => {
+    const img = createImageElement(src);
+    carousel.appendChild(img);
+  });
+
+  carousel.addEventListener('click', (e) => {
+    if (e.target.classList.contains('next')) {
+      nextImage();
+    } else if (e.target.classList.contains('prev')) {
+      prevImage();
+    }
+  });
+
+  setInterval(nextImage, 5000); // Сменить изображение каждые 5 секунд
+</script>
+
+</body>
+</html>
