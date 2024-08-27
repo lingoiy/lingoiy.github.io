@@ -57,12 +57,17 @@
 </div>
 
 <script>
+  var intex = 0
   const carousel = document.getElementById('carousel');
   const urlParams = new URLSearchParams(window.location.search);
   const images = urlParams.getAll('img'); // Получаем массив URL изображений из URLSearchParams
 
   function createImageElement(src) {
+    intex += 1;
     const img = document.createElement('img');
+    if(intex == 1) {
+      img.classList.add("active")
+    }
     img.src = src;
     img.alt = '';
     return img;
