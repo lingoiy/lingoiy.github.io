@@ -1,0 +1,111 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            height: 100vh;
+            background-color: white;
+        }
+        .container {
+            margin-left: 50px;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .checkbox {
+            width: 40px;
+            height: 40px;
+            margin-right: 20px;
+            transition: transform 0.2s;
+        }
+        .checkbox:checked {
+            transform: scale(1.2);
+        }
+        .note {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="checkbox-container">
+            <input type="checkbox" class="checkbox" id="checkbox1">
+            <div>Какать вкусно</div>
+        </div>
+        <div class="checkbox-container">
+            <input type="checkbox" class="checkbox" id="checkbox2">
+            <div>Разогнать видеокарту</div>
+        </div>
+        <div class="checkbox-container">
+            <input type="checkbox" class="checkbox" id="resetAll">
+            <div>Сбросить все</div>
+        </div>
+        <div class="checkbox-container">
+            <input type="checkbox" class="checkbox" id="checkbox3">
+            <div>Заказать пиццу</div>
+        </div>
+      <div class="checkbox-container">
+            <input type="checkbox" class="checkbox" id="selectAll">
+            <div>Выбрать все</div>
+        </div>
+        <div class="checkbox-container">
+            <input type="checkbox" class="checkbox" id="checkbox4">
+            <div>Установить Яндекс.Игры</div>
+        </div>
+        <div class="checkbox-container">
+            <input type="checkbox" class="checkbox" id="checkbox5">
+            <div>Я глаголь*</div>
+        </div>
+        <div class="note">*нажимая эту галочку, вы подтверждаете, что вы держите Костяна в заложниках</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const selectAllCheckbox = document.getElementById('selectAll');
+            const resetAllCheckbox = document.getElementById('resetAll');
+
+            checkboxes.forEach((checkbox, index) => {
+                if (checkbox.id !== 'selectAll' && checkbox.id !== 'resetAll') {
+                    const savedValue = localStorage.getItem(`checkbox${index + 1}`);
+                    if (savedValue === 'true') {
+                        checkbox.checked = true;
+                    }
+                    checkbox.addEventListener('change', () => {
+                        localStorage.setItem(`checkbox${index + 1}`, checkbox.checked);
+                    });
+                }
+            });
+
+            selectAllCheckbox.addEventListener('change', () => {
+                checkboxes.forEach((checkbox, index) => {
+                    if (checkbox.id !== 'selectAll' && checkbox.id !== 'resetAll') {
+                        checkbox.checked = selectAllCheckbox.checked;
+                        localStorage.setItem(`checkbox${index + 1}`, checkbox.checked);
+                    }
+                });
+            });
+
+            resetAllCheckbox.addEventListener('change', () => {
+                checkboxes.forEach((checkbox, index) => {
+                    if (checkbox.id !== 'selectAll' && checkbox.id !== 'resetAll') {
+                        checkbox.checked = false;
+                        localStorage.setItem(`checkbox${index + 1}`, false);
+                    }
+                });
+                resetAllCheckbox.checked = false;
+            });
+        });
+    </script>
+</body>
+</html>
