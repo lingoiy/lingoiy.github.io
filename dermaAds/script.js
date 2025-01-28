@@ -11,3 +11,6 @@ function pickLink() {
   let link = "https://youtube.com/embed/" + videos[Math.floor(Math.random() * 6)];
   window.open(link, "_blank", "width=480;height=270;");
 }
+function adended() {
+  window.chrome.webview.postMessage(JSON.stringify({ action: `adended` }));
+}
