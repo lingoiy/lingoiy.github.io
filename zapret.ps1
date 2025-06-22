@@ -9,7 +9,6 @@ $tempZip = "$env:TEMP\zapret_1_6_1.rar"
 function Show-FolderBrowserDialog {
     $dialog = New-Object System.Windows.Forms.FolderBrowserDialog
     $dialog.Description = "Выберите папку для распаковки"
-    $dialog.RootFolder = [System.Windows.Forms.SpecialFolder]::MyComputer
     
     if ($dialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
         return $dialog.SelectedPath
