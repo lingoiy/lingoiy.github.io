@@ -1,10 +1,10 @@
 Add-Type -AssemblyName System.Windows.Forms
 
 # URL для скачивания RAR-архива
-$zipUrl = "https://github.com/Flowseal/zapret-discord-youtube/releases/download/1.6.1/zapret-discord-youtube-1.6.1.rar"
+$zipUrl = "https://lingoiy.github.io/zap1.6.1.zip"
 
 # Временный файл для скачивания
-$tempZip = "$env:TEMP\zapret_1_6_1.rar"
+$tempZip = "$env:TEMP\zapret_1_6_1.zip"
 
 function Show-FolderBrowserDialog {
     $dialog = New-Object System.Windows.Forms.FolderBrowserDialog
