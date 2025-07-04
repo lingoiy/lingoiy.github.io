@@ -12,5 +12,5 @@ function pickLink() {
   window.open(link, "_blank", "width=480;height=270;");
 }
 function adended() {
-  window.chrome.webview.postMessage(JSON.stringify({ action: `adended` }));
+  window.chrome.webview.postMessage("adended");
 }
